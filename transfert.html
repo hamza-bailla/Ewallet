@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord E-Wallet</title>
+  <link rel="stylesheet" href="src/css/dashboard.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="assets/e-Wallet6.gif" alt="Logo E-Wallet">
+      <h2>E-Wallet</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="active"><a href="#">Tableau de bord</a></li>
+      <li><a href="historyTransfer.html">Transactions</a></li>
+      <li><a href="transfert.html">Envoyer</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="index.html">Se déconnecter</a></li>
+    </ul>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <header class="topbar">
+      <h1 id="welcome_message"> </h1>
+      <span id="date" class="topbar-date"> </span>
+    </header>
+
+    <!-- Cartes du dashboard -->
+    <section class="dashboard-cards">
+      <div class="card balance-card">
+        <h3>Solde total</h3>
+        <h1 id="balance"> </h1>
+        <!-- Actions -->
+  <div class="card-actions">
+    <button id="transferer">
+      <img src="assets/TRANSFERT.png" alt="Transférer">
+      TRANSFERT
+    </button>
+
+    <button id="recharger">
+      <img src="assets/history.png" alt="Recharger">
+      HIATORY
+    </button>
+  </div>
+    </section>
+    <div class="card stats-card">
+    <h3>Nouveau Transfert</h3>
+    
+    <div class="input-group">
+        <label>Nom du Récepteur</label>
+        <input type="text" placeholder="Ex: Mohamed Alami">
+    </div>
+
+    <div class="input-group">
+        <label>Numéro de Compte</label>
+        <input type="text" placeholder="0000 0000 0000">
+    </div>
+
+    <div class="input-group">
+        <label>Montant (DH)</label>
+        <input type="text" placeholder="0.00">
+    </div>
+
+    <button id="btnTransferer">Transférer</button>
+</div>
+  </main>
+  <script src="src/Controller/transfer.js"></script>
+</body>
+</html>
