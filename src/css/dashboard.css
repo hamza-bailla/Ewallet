@@ -315,30 +315,11 @@ body {
 }
 
 
-/* Style pour les champs de saisie dans le formulaire de paiement */
-.form-pay input {
-    width: 100%;
+#montantPay, #numFixe {
+    width: 100%; /* Pour qu'ils fassent la même taille */
     padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box; /* Pour que le padding ne déborde pas */
-}
-
-/* Style spécifique au bouton valider pour qu'il soit large */
-#btnValider {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#btnValider:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block; /* Pour qu'ils s'empilent proprement */
 }
