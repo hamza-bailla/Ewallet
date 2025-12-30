@@ -6,6 +6,19 @@ const Transferts = [
     {date: "14-02-2025",client : "Abderrahim zaitouni",montant: "20000"}
 ]
 
+const user =[
+     {mail: "hamza@gmail.com", password: "123"},
+     {mail: "reda@gmail.com", password: "123"},
+     {mail: "ilyas@gmail.com", password: "123"},
+     
+];
+
+const client = [
+    {nom: "Mohamed Amine",Ncompte:"2821 4567 8965",solde:10890},
+    {nom: "Yassine Alaoui",Ncompte:"2820 3569 6005",solde:15700},
+    {nom: "Reda Amine",Ncompte:"2851 8967 7005",solde:70000}
+];
+
 // 2. Sélection des éléments
 const tableBody = document.querySelector("#transfert tbody");
 const balanceDisplay = document.getElementById("balance");
@@ -13,6 +26,26 @@ const welcomeMessage = document.getElementById("welcome_message");
 const dateDisplay = document.getElementById("date");
 const selectedTypeTransaction = document.getElementById("mySelectTransaction");
 const consultTransfertbtn = document.getElementById("recharger");
+
+//recuperer les champs transferer
+
+const inputnom = document.getElementById("nom");
+const inputcompte = document.querySelector("#ncompte");
+const inputmontant = document.getElementById("montant");
+const trandferBtn = document.querySelector("#btnTransferer");
+trandferBtn.addEventListener("click",handlTransfererMontant);
+
+
+function handlTransfererMontant(Solde){
+    return new Promise((resolve,reject) => {
+        if(client.find((c1)=>c1.nom===inputnom && c1.Ncompte===inputcompte)){
+            resolve("The user existe")
+        }else{}
+
+
+    })
+}
+
 
 consultTransfertbtn.addEventListener("click",handlHistory)
 

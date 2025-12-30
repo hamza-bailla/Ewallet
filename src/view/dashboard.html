@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tableau de bord E-Wallet</title>
-  <link rel="stylesheet" href="src/css/dashboard.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <img src="assets/e-Wallet6.gif" alt="Logo E-Wallet">
+      <img src="../../assets/e-Wallet6.gif" alt="Logo E-Wallet">
       <h2>E-Wallet</h2>
     </div>
     <ul class="sidebar-menu">
@@ -18,43 +17,39 @@
       <li><a href="historyTransfer.html">Transactions</a></li>
       <li><a href="transfert.html">Envoyer</a></li>
       <li><a href="#">Profil</a></li>
-      <li><a href="index.html">Se déconnecter</a></li>
+      <li><a href="index.html" id="logout-btn">Se déconnecter</a></li>
     </ul>
   </aside>
 
-  <!-- Contenu principal -->
   <main class="main-content">
     <header class="topbar">
       <h1 id="welcome_message"> </h1>
       <span id="date" class="topbar-date"> </span>
     </header>
 
-    <!-- Cartes du dashboard -->
     <section class="dashboard-cards">
       <div class="card balance-card">
         <h3>Solde total</h3>
         <h1 id="balance"> </h1>
-        <!-- Actions -->
-  <div class="card-actions">
-    <button id="transferer">
-      <img src="assets/depot.png" alt="Transférer">
-      Transférer
-    </button>
+        <div class="card-actions">
+          <button id="transferer">
+            <img src="../../assets/depot.png" alt="Transférer">
+            Transférer
+          </button>
 
-    <button id="recharger">
-      <img src="assets/trans.png" alt="Recharger">
-      Recharger
-    </button>
+          <button id="recharger">
+            <img src="../../assets/trans.png" alt="Recharger">
+            Recharger
+          </button>
 
-    <button id="payer">
-      <img src="assets/payer.png" alt="Payer">
-      Payer
-    </button>
-  </div>
+          <button id="payer">
+            <img src="../../assets/payer.png" alt="Payer">
+            Payer
+          </button>
+        </div>
       </div>
-
-      
     </section>
+
     <div class="card stats-card">
         <h3>Transactions récentes</h3>
         <select id="mySelectTransaction">
@@ -62,21 +57,21 @@
             <option value="credit">Crédit</option>
             <option value="debit">Débit</option>
         </select>
-        <table id ="transactions" class="transactions-table">
+        <table id="transactions" class="transactions-table">
           <thead>
-        <tr>
-         <th>Date</th>
-         <th>Description</th>
-         <th>Type</th>
-         <th>Montant</th>
-      </tr>
-     </thead>
-      <tbody>
-    <!-- Les transactions seront injectées ici -->
-  </tbody>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Montant</th>
+            </tr>
+          </thead>
+          <tbody>
+            </tbody>
         </table>
       </div>
   </main>
-  <script src="src/Controller/Dashboard.js"></script>
+  
+  <script type="module" src="../Controller/Dashboard.js"></script>
 </body>
 </html>

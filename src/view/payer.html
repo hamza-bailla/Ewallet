@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord E-Wallet</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../../assets/e-Wallet6.gif" alt="Logo E-Wallet">
+      <h2>E-Wallet</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="active"><a href="#">Tableau de bord</a></li>
+      <li><a href="historyTransfer.html">Transactions</a></li>
+      <li><a href="transfert.html">Envoyer</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="index.html">Se déconnecter</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <h1 id="welcome_message"> </h1>
+      <span id="date" class="topbar-date"> </span>
+    </header>
+
+    <section class="dashboard-cards">
+      <div class="card balance-card">
+        <h3>Solde total</h3>
+        <h1 id="balance"> </h1>
+        <div class="card-actions">
+          <button id="transferer">
+            <img src="../../assets/depot.png" alt="Transférer">
+            Transférer
+          </button>
+
+          <button id="recharger">
+            <img src="../../assets/trans.png" alt="Recharger">
+            Recharger
+          </button>
+
+          <button id="payer">
+            <img src="../../assets/payer.png" alt="Payer">
+            Payer
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="card stats-card">
+        <h1 align="center">Liste des Factures</h1>
+         <button id="teleInternet">
+            Telephone et Internet
+          </button>
+
+          <button id="eauElectricite">
+            Eau et Electricite
+          </button>
+
+          <button id="taxadministration">
+            Taxes et Administrations
+          </button>
+          <button id="transportbilleterie">
+            Transport et Billetterie
+          </button>
+    </div>
+  </main>
+  
+  <script type="module" src="../Controller/paiementliste.js"></script>
+</body>
+</html>
