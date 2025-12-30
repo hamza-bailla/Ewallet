@@ -14,8 +14,8 @@ export const Transactions = [
 ];
 
 export const user = [
-    { mail: "abdelalim@gmail.com", password: "123", nom: "Abdelali Alim", solde: 15400 },
     { mail: "hamza@gmail.com", password: "123", nom: "Hamza BAILLA", solde: 200100 }, 
+    { mail: "abdelalim@gmail.com", password: "123", nom: "Abdelali Alim", solde: 15400 },  
     { mail: "othmaned@yahoo.fr", password: "123", nom: "Thomas BERNARD", solde: 850 },
     { mail: "samira@outlook.com", password: "123", nom: "Samira ENNAJI", solde: 125000 },
     { mail: "laila@gmail.com", password: "123", nom: "Laila MEZIANE", solde: 3200 },
