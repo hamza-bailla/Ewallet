@@ -5,11 +5,11 @@ loginBtn.addEventListener("click",handlLogin);
 signinBtn.addEventListener("click",handlSignIn)
 
 function handlLogin(){
-    window.location.href="login.html";
+    window.location.href="src/view/login.html";
 }
 
 function handlSignIn(){
-    window.location.href="signin.html";
+    window.location.href="src/view/signin.html";
 }
 
 
