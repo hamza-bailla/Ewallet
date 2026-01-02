@@ -41,6 +41,21 @@ function processPayment(montant) {
                 currentUser.solde -= montant;
                 // Sauvegarde permanente dans le navigateur
                 localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                //localStorage.setItem('currentUser',JSON.stringify(currentUser));//POUR Sauvegarder dans le localstorage.
+                //Sauvegarder le rechargement dans localstorage
+            const NewPaiment = {
+             date: new Date().toLocaleDateString(),
+             type:'-',
+             description: `Paiement Fixe de ${currentUser.nom} `,
+             montant : montant,
+            }
+            //recuperer les historique de localstorage
+            const historque = JSON.parse(localStorage.getItem('transactions'))||[];
+             //ajouter cette transaction
+            historque.push(NewPaiment);
+            //sauvegarder dans localstorage
+            localStorage.setItem('transactions',JSON.stringify(historque));
+            console.log(historque);
                 resolve("Paiement validé avec succès !");
             }
         }, 1000);
@@ -87,7 +102,7 @@ function afficherProduitsIAM() {
 window.afficherFormulaireFixe = function() {
     mainContainer.innerHTML = `
         <h1 align="center">Paiement Fixe</h1>
-        <div class="form-pay">
+        <div class="form-Recharge">
             <p style="text-align:center">Solde actuel: <strong>${currentUser.solde} DH</strong></p>
             <input type="number" id="montantPay" placeholder="Montant (ex: 100)">
             <input type="text" id="numFixe" placeholder="N° de téléphone Fixe">
@@ -118,8 +133,7 @@ window.afficherFormulaireFixe = function() {
             if (balanceDisplay) balanceDisplay.textContent = `${currentUser.solde} DH`;
             
             // Redirection vers le dashboard pour voir le nouveau solde
-            window.location.href = "dashboard.html"; 
-
+            window.location.href = "dashboard.html";           
         } catch (erreur) {
             // Échec
             alert("Erreur : " + erreur);
@@ -127,6 +141,7 @@ window.afficherFormulaireFixe = function() {
             btnValider.textContent = "Valider le paiement";
             btnValider.style.opacity = "1";
         }
+        
     });
 };
 
@@ -135,65 +150,6 @@ if (teleBtn) {
     teleBtn.addEventListener('click', afficherOperateursTele);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-// // 1. Sélection des éléments du DOM
-// const mainContainer = document.querySelector('.stats-card');
-
-// // 2. Fonction pour afficher la liste des opérateurs (Étape 2)
-// function afficherOperateursTele() {
-//     mainContainer.innerHTML = `
-//         <h1 align="center">Téléphonie et Internet</h1>
-//         <div class="operators-list">
-//             <button class="op-btn" id="marocTelecom" style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">
-//                 Maroc Telecom
-//             </button>
-//             <button class="op-btn" id="orange" style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">
-//                   Orange Maroc
-//             </button>
-//         </div>
-//         <button onclick="window.location.reload()" class="btn-retour" style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">← Retour</button>
-//     `;
-
-//     // Ajouter l'écouteur pour Maroc Telecom
-//     document.getElementById('marocTelecom').addEventListener('click', afficherProduitsIAM);
+// if (EauElectriciteBtn){
+//    // EauElectriciteBtn.addEventListener('click',afficherOperateursEauElectricite);
 // }
-
-// // 3. Fonction pour afficher les produits (Étape 3)
-// function afficherProduitsIAM() {
-//     mainContainer.innerHTML = `
-//         <h1 align="center">Maroc Telecom</h1>
-//         <ul class="product-list">
-//             <li><button onclick="afficherFormulaireFixe()" style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">Produit Fixe</button></li>
-//             <li><button style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">Produit Mobile</button></li>
-//             <li><button style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">Produit Internet</button></li>
-//         </ul>
-//         <button onclick="afficherOperateursTele()" class="btn-retour">← Retour</button>
-//     `;
-// }
-
-// // 4. Fonction pour afficher le formulaire final (Étape 4)
-// window.afficherFormulaireFixe = function() {
-//     mainContainer.innerHTML = `
-//         <h1 align="center">Paiement Fixe</h1>
-//         <div class="form-pay">
-//             <input type="text" id="codeConf" placeholder="Code confidentiel">
-//             <input type="text" id="numFixe" placeholder="N° de téléphone Fixe">
-//             <button id="btnValider" style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">Valider le paiement</button>
-//         </div>
-//         <button onclick="afficherProduitsIAM()" class="btn-retour" style="background: linear-gradient(135deg, #fbc2eb, #fbc2eb);">← Retour</button>
-//     `;
-// };
-
-// // --- ÉCOUTEURS D'ÉVÉNEMENTS INITIAUX ---
-// document.getElementById('teleInternet').addEventListener('click', afficherOperateursTele);

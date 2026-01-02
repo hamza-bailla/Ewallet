@@ -24,7 +24,8 @@ export const user = [
     { mail: "jad@icloud.com", password: "123", nom: "Jad ELALSOUI", solde: 78900 },
     { mail: "karima@gmail.com", password: "123", nom: "Karima MIFTSH", solde: 550 },
     { mail: "said@yahoo.com", password: "123", nom: "Said OUHAOUI", solde: 210500 },
-    { mail: "yamna@gmail.com", password: "123", nom: "Yamna ENNASIMI", solde: 1340 }
+    { mail: "yamna@gmail.com", password: "123", nom: "Yamna ENNASIMI", solde: 1340 },
+     { mail: "Abderahim@gmail.com", password: "123", nom: "Abderrahim Zaytouni", solde: 1000000000 }
 ];
 
 // export const user = {

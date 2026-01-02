@@ -58,25 +58,64 @@ document.addEventListener("DOMContentLoaded", () => {
     renderAllTransactions(Transactions);
 });
 
-// 5. Fonctions d'affichage des transactions
-function displayTransaction(trans) {
-    const row = document.createElement("tr");
+//5. Fonctions d'affichage des transactions
+// function displayTransaction(trans) {
+//     const row = document.createElement("tr");
+//     const historique = JSON.parse(localStorage.getItem('transactions')) || [];
+//     const transactionsData = Transactions || [];
+//     const rechargementt = historique.trans;
 
-    // Définir la couleur selon le type (+ pour Crédit, - pour Débit)
-    const amountColor = trans.type === "+" ? "green" : "red";
-    const labelType = trans.type === "+" ? "Crédit" : "Débit";
+//     // Définir la couleur selon le type (+ pour Crédit, - pour Débit)
+//     const amountColor = trans.type === "+" ? "green" : "red";
+//     const labelType = trans.type === "+" ? "Crédit" : "Débit";
 
-    row.innerHTML = `
+//     row.innerHTML = `
+//         <td>${trans.date}</td>
+//         <td>${trans.description}</td>
+//         <td>${labelType}</td>
+//         <td style="color: ${amountColor}; font-weight: bold;">
+//             ${trans.type}${trans.montant} DH
+//         </td>
+//     `;
+    
+//     //ajouter les rechargement au tableau dashboard
+//     tableBody.appendChild(row);
+//     //ajouter les rechargement au tableau dashboard
+
+//     console.log(historique);
+// }
+
+function displayTransaction(){
+    tableBody.innerHTML = "";
+    const transactionData = Transactions || [];
+    const historique = JSON.parse(localStorage.getItem('transactions')) || [];
+    const TouteData = [...transactionData,...historique];
+
+    TouteData.forEach(trans => {
+         const row = document.createElement("tr");
+         // Définir la couleur selon le type (+ pour Crédit, - pour Débit)
+        const amountColor = trans.type === "+" ? "green" : "red";
+        const labelType = trans.type === "+" ? "Crédit" : "Débit";
+        row.innerHTML = `
         <td>${trans.date}</td>
-        <td>${trans.description}</td>
+        <td>${trans.description || "Rechargement du Solde"}</td>
         <td>${labelType}</td>
         <td style="color: ${amountColor}; font-weight: bold;">
             ${trans.type}${trans.montant} DH
         </td>
     `;
-
-    tableBody.appendChild(row);
+        //ajouter les rechargement au tableau dashboard
+     tableBody.appendChild(row);
+        
+    });
 }
+// Lancer l'affichage au chargement de la page
+document.addEventListener('DOMContentLoaded', displayTransaction);
+
+
+// Appeler la fonction au chargement de la page
+window.onload = displayTransaction;
+
 
 function renderAllTransactions(list) {
     // On vide le tableau avant de le remplir pour éviter les doublons
