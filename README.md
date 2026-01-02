@@ -26,6 +26,12 @@ Si vous souhaitez tester le projet localement :
 1. Clonez le dépôt : `git clone https://github.com/hamza-bailla/Ewallet.git`
 2. Ouvrez le dossier dans VS Code.
 3. Lancez `index.html` avec l'extension **Live Server**.
+##  Usage && Test
+you can test this App with any of following Users:
+Login: hamza@gmail.com, password:123
+Login: abdelalim@gmail.com, password:123
+Login: othmaned@yahoo.fr, password:123
+Login: arwa@gmail.com, password:123
 
 ---
 Développé avec ❤️ par [Hamza BAILLA](https://github.com/hamza-bailla)
