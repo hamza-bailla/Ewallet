@@ -10,6 +10,12 @@ if (!storedUser) {
 }
 let currentUser = storedUser;
 
+//cette importation pour se deconnecter
+import { logoutF } from './logout.js';
+logoutF();
+
+
+
 // --- SÉLECTION DES ÉLÉMENTS DU DOM ---
 const mainContainer = document.querySelector('.stats-card');
 const welcomeMessage = document.getElementById("welcome_message"); 

@@ -284,6 +284,19 @@ body {
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
+.stats-card input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9fb;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
 
 .stats-card input[type="text"]:focus {
     border-color: #ac39cf;
@@ -323,3 +336,6 @@ body {
     border-radius: 5px;
     display: block; /* Pour qu'ils s'empilent proprement */
 }
+
+/*CSS pour la partie transfert*/
+

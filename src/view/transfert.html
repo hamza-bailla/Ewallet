@@ -17,8 +17,8 @@
       <li class="active"><a href="#">Tableau de bord</a></li>
       <li><a href="historyTransfer.html">Transactions</a></li>
       <li><a href="transfert.html">Envoyer</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="index.html">Se déconnecter</a></li>
+      <li><a href="profile.html">Profil</a></li>
+      <li><a href="#" id="logout-btn">Se déconnecter</a></li>
     </ul>
   </aside>
 
@@ -36,12 +36,12 @@
         <h1 id="balance"> </h1>
         <!-- Actions -->
   <div class="card-actions">
-    <button id="transferer">
+    <button id="transfererr">
       <img src="../../assets/TRANSFERT.png" alt="Transférer">
       TRANSFERT
     </button>
 
-    <button id="recharger">
+    <button id="history" >
       <img src="../../assets/history.png" alt="Recharger">
       HISTORY
     </button>
@@ -50,22 +50,7 @@
     <div class="card stats-card">
     <h3>Nouveau Transfert</h3>
     
-    <div class="input-group">
-        <label>Nom du Récepteur</label>
-        <input id="nom" type="text" placeholder="Ex: Mohamed Alami">
-    </div>
-
-    <div class="input-group">
-        <label>Numéro de Compte</label>
-        <input id="ncompte" type="text" placeholder="0000 0000 0000">
-    </div>
-
-    <div class="input-group">
-        <label>Montant (DH)</label>
-        <input id="montant" type="text" placeholder="0.00">
-    </div>
-
-    <button id="btnTransferer">Transférer</button>
+    
 </div>
   </main>
   <script type="module" src="../Controller/transfer.js"></script>

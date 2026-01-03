@@ -10,6 +10,11 @@ if (!storedUser) {
 }
 let currentUser = storedUser;
 
+//cette importation pour se deconnecter
+import { logoutF } from './logout.js';
+logoutF();
+
+
 // --- SÉLECTION DES ÉLÉMENTS DU DOM ---
 const mainContainer = document.querySelector('.stats-card');
 const welcomeMessage = document.getElementById("welcome_message"); 
@@ -37,7 +42,7 @@ function processRecharge(Montant){
             }else{
                 currentUser.solde += Montant;
                 localStorage.setItem('currentUser',JSON.stringify(currentUser));//POUR Sauvegarder dans le localstorage.
-                //Sauvegarder le rechargement dans localstorage
+            //Sauvegarder le rechargement dans localstorage
             const NewTransaction = {
              date: new Date().toLocaleDateString(),
              type:'+',
@@ -50,7 +55,7 @@ function processRecharge(Montant){
             historque.push(NewTransaction);
             //sauvegarder dans localstorage
             localStorage.setItem('transactions',JSON.stringify(historque));
-            console.log(historque);
+            
 
                 resolve("Rechargement validé avec succès !");
             }

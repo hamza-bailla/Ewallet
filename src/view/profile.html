@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Utilisateur - E-Wallet</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <style>
+    .profile-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ac39cf;
+      margin-bottom: 10px;
+    }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .info-group {
+      background: #f9f9fb;
+      padding: 15px;
+      border-radius: 12px;
+      border-left: 5px solid #ac39cf;
+    }
+    .info-label {
+      display: block;
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      font-weight: 600;
+      color: #333;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../../assets/e-Wallet6.gif" alt="Logo E-Wallet">
+      <h2>E-Wallet</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">Tableau de bord</a></li>
+      <li><a href="historyTransfer.html">Transactions</a></li>
+      <li><a href="transfert.html">Envoyer</a></li>
+      <li class="active"><a href="#">Profil</a></li>
+      <li><a href="#" id="logout-btn">Se déconnecter</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <h1>Mon Profil</h1>
+      <span id="date" class="topbar-date"></span>
+    </header>
+
+    <section class="card stats-card">
+      <div class="profile-header">
+        <img src="../../assets/profileHamzaBailla.jpeg" alt="Photo de profil" class="profile-img" id="profile_img">
+        <h2 id="full_name">Chargement...</h2>
+        <p class="topbar-date">Membre depuis le : <span id="creation_date">--/--/----</span></p>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+      <div class="profile-grid">
+        <div class="info-group">
+          <span class="info-label">Numéro de Compte</span>
+          <span class="info-value" id="account_number">XXXXXXXX</span>
+        </div>
+        
+        <div class="info-group">
+          <span class="info-label">Solde Bancaire</span>
+          <span class="info-value" id="bank_balance" style="color: #2ecc71;">0.00 DH</span>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Email</span>
+          <span class="info-value" id="Email">email@exemple.com</span>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Téléphone</span>
+          <span class="info-value" id="phone">+212 6XX XXX XXX</span>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Année de Naissance</span>
+          <span class="info-value" id="birth_year">YYYY</span>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">Nationalité</span>
+          <span class="info-value" id="nationality">Marocaine</span>
+        </div>
+      </div>
+
+      <div class="card-actions" style="margin-top: 30px;">
+        <button id="edit-profile">Modifier mes informations</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../Controller/profil.js"></script>
+</body>
+</html>
