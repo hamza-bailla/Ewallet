@@ -61,9 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
     renderAllTransactions(Transactions);
 });
 
+const numcomptuser = currentUser.numcomptUser;
 
 function displayTransaction(){
     tableBody.innerHTML = "";
+    if(numcomptuser === Transactions.NumCompteEmet){
     const transactionData = Transactions || [];
     const historique = JSON.parse(localStorage.getItem('transactions')) || [];
     const TouteData = [...transactionData,...historique];
@@ -85,7 +87,10 @@ function displayTransaction(){
      tableBody.appendChild(row);
         
     });
+    
 }
+    }
+    
 // Lancer l'affichage au chargement de la page
 document.addEventListener('DOMContentLoaded', displayTransaction);
 

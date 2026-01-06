@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
 //recuperer les champs transferer
 const mainContainer = document.querySelector('.stats-card');
 const inputnomDes = document.getElementById("nom");
-const inputcompte = document.querySelector("#ncompte");
+const inputcompte = document.getElementById("ncompte");
 const inputmontant = document.getElementById("montant");
 const transfBtn = document.getElementById("transfererr");
 ///trandferBtn.addEventListener("click",handlTransfererMontant);
 const montant = inputmontant;
 const nameDes = inputnomDes;
-const numCompte = inputnomDes;
+const numCompte = inputcompte;
 
 
 
@@ -85,7 +85,10 @@ validTrandfer.addEventListener('click',async()=>{
             validTrandfer.disabled = false;
             validTrandfer.textContent = "Transfert...";
             validTrandfer.style.opacity = "1";
-        }
+        // } finally(){
+        //     window.location.href="dashboard.html";
+     }
+        
 
 
 });
@@ -99,7 +102,7 @@ function processTranfsert(montant){
                 reject("le Solde est insiffusant !!");
             }else{
                 currentUser.solde -=montant;
-                //Sauvegarder la transfer dans localstorage.
+                //Sauvegarder la transfer dans localstorage. || traduit l'objet vers une chaine de caractere et le stocker dans localstorage.
                 localStorage.setItem('currentUser',JSON.stringify(currentUser));
                 const NewTransfert = {
                     date: new Date().toLocaleDateString(),
@@ -110,7 +113,7 @@ function processTranfsert(montant){
                     NumComptedest:`${numCompte}`,
                     
             };
-             //recuperer les historique de localstorage
+             //recuperer les historique de localstorage || traduit la chaine de caractere vers l'objet historique.
                     const histoirque = JSON.parse(localStorage.getItem('transactions'))||[];
                     //ajouter cette transaction
                     histoirque.push(NewTransfert);

@@ -1,12 +1,12 @@
-// 1. Importation des données depuis le fichier centralisé
+
 import { user, Transactions } from '../Model/data.js';
 const storedUser = JSON.parse(localStorage.getItem('currentUser'));
 
 if (storedUser) {
-    // Si on trouve un utilisateur, on l'utilise
+    
     var currentUser = storedUser;
 } else {
-    // Si le stockage est vide, c'est que l'utilisateur n'est pas connecté
+    
     window.location.href = "login.html"; 
 }
 
@@ -14,7 +14,7 @@ import { logoutF } from './logout.js';
 logoutF();
 
 
-// 2. Sélection des éléments
+
 const tableBody = document.querySelector("#transfert tbody");
 const balanceDisplay = document.getElementById("balance");
 const welcomeMessage = document.getElementById("welcome_message");
@@ -25,14 +25,14 @@ if(makeTransfertbtn) {
     makeTransfertbtn.addEventListener("click", handltransfert);
 }
 
-// 3. Initialisation Unique
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Affichage des infos de base
+   
     welcomeMessage.textContent = `Bienvenue, ${currentUser.nom}`;
     dateDisplay.textContent = new Date().toLocaleDateString('fr-FR');
     balanceDisplay.textContent = `${currentUser.solde} DH`;
 
-    // APPEL UNIQUE : C'est cette fonction qui gère toute la logique
+    
     displayTransfertVerment(); 
 });
 
@@ -41,7 +41,7 @@ function displayTransfertVerment() {
 
     tableBody.innerHTML = "";
     
-    // Récupération des données (On définit TouteData ici)
+    
     const transactionData = (typeof Transactions !== 'undefined') ? Transactions : [];
     const historique = JSON.parse(localStorage.getItem('transactions')) || [];
     const TouteData = [...transactionData, ...historique];
@@ -69,6 +69,7 @@ function displayTransfertVerment() {
         tableBody.appendChild(row);
     });
     console.log(TouteData);
+    console.log(historique);
 }
 
 
