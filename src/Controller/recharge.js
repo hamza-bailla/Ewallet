@@ -111,7 +111,7 @@ function AfficherOperateursBtn() {
             alert(resultat);
             
             // Redirection ou mise à jour UI
-           // window.location.href = "dashboard.html"; 
+            window.location.href = "dashboard.html"; 
            
         } catch (erreur) {
             // Échec
